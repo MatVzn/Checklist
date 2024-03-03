@@ -62,7 +62,7 @@ main {
 .line {
   height: 2px;
   background-color: var(--primary-color);
-  margin: 40px 0;
+  margin: 35px 0;
 }
 
 ul {
