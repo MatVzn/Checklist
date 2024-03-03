@@ -18,16 +18,26 @@
       <p class="gray-cube"></p>
     </p>
 
-    <h1>Tarefas</h1>
+    <header>
+      <h1>Tarefas</h1>
+      <div class="buttons">
+        <button class="clear" onclick="clearAll()"> 
+          <img src="./assets/paper.svg"> 
+        </button>
+        <button class="clearAll" onclick="clearEmpty()"> 
+          <img src="./assets/trash.svg"> 
+        </button>
+      </div>
+    </header>
+
     <p class="line"></p>
 
     <ul>
 
       <div class="taskArea">
-
       </div>
 
-      <button onclick="newTask()"> + </button>
+      <button class="add" onclick="newTask()"> + </button>
 
     </ul>
 
