@@ -6,16 +6,22 @@
 
 :root {
   --primary-color: #272829;
+  --highlight-primary: rgba(40, 41, 42, 0.5);
   --paper-color: #fdf8ea;
   --background-color: #f1c232;
-  --color-button: #faecc1;
-  --hightlight-button: #f9e6ad;
+  --color-button: #f9e6ad;
+  --hightlight-button: #faecc1;
   --red-color: #ff6666;
   --highlight-red: #ff7a7a;
 }
 
 .hidden {
   display: none!important;
+}
+
+.check {
+  text-decoration: line-through!important;
+  pointer-events: none!important;
 }
 
 body {
@@ -93,7 +99,7 @@ button.clearAll:hover {
 button.clear {
   all: unset;
   color: var(--primary-color);
-  background-color: var(--hightlight-button);
+  background-color: var(--color-button);
   cursor: pointer;
 
   display: grid;
@@ -110,7 +116,7 @@ button.clear {
 }
 
 button.clear:hover {
-  background-color: var(--color-button);
+  background-color: var(--hightlight-button);
 }
 
 main {
@@ -130,7 +136,7 @@ main {
 .line {
   height: 2px;
   background-color: var(--primary-color);
-  margin: 30px 0;
+  margin: 20px 0;
 }
 
 ul {
@@ -146,6 +152,7 @@ ul {
 .checkBox {
   transition: all .2s;
   border-radius: 5px;
+  height: 30px;
 }
 
 .checkBox:hover {
@@ -155,7 +162,7 @@ ul {
 button.add {
   all: unset;
   color: var(--primary-color);
-  background-color: var(--hightlight-button);
+  background-color: var(--color-button);
   cursor: pointer;
 
   display: grid;
@@ -174,19 +181,20 @@ button.add {
 }
 
 button.add:hover {
-  background-color: var(--color-button);
+  background-color: var(--hightlight-button);
 }
 
 .taskBox {
   display: flex;
   flex-direction: row;
-  gap: 8px;
+  gap: 5px;
+  border-bottom: 1px solid var(--highlight-primary);
 }
 
 .taskArea {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .taskArea input {
@@ -197,16 +205,13 @@ button.add:hover {
 
   height: auto;
   width: 100%;
+  height: 19px;
 
   font-weight: 600;
   transition: background-color .1s;
+  margin-bottom: 5px;
 }
 
 .taskArea input:focus {
   background-color: var(--hightlight-button);
-}
-
-.check {
-  text-decoration: line-through!important;
-  pointer-events: none!important;
 }

@@ -1,8 +1,7 @@
-
+const taskArea = document.querySelector('.taskArea')
 
 function newTask() {
-  const taskArea = document.querySelector('.taskArea')
-
+  
   let div = document.createElement('div')
   div.setAttribute('class', 'taskBox')
   div.innerHTML = taskTemplate
@@ -12,19 +11,21 @@ function newTask() {
   const inputArea = div.querySelector('input')
   inputArea.focus()
   
-  if (taskArea.childElementCount >= 16) {
+  if (taskArea.childElementCount >= 15) {
     const button = taskArea.nextElementSibling
     button.classList.add('hidden')
   }
 }
 
 function check(event) {
-  const taskArea = document.querySelector('.taskArea')
-
   checkBox = event.target
     if (checkBox.src.includes('square.svg')) {
-      checkBox.src = './assets/check.svg'
-      checkBox.nextElementSibling.classList.add('check')
+      if (checkBox.nextElementSibling.value.length == 0) {
+        checkBox.nextElementSibling.focus()
+      } else {
+        checkBox.src = './assets/check.svg'
+        checkBox.nextElementSibling.classList.add('check')
+      }
     } else {
       checkBox.src = './assets/square.svg'
       checkBox.nextElementSibling.classList.remove('check')
@@ -32,11 +33,22 @@ function check(event) {
 }
 
 function clearAll() {
-  const Tasks = 'oi'
+  taskArea.innerHTML = ''
+
+  const button = taskArea.nextElementSibling
+  button.classList.remove('hidden')
 }
 
 function clearEmpty() {
-  const emptyTasks = 'oi'
+  const taskBox = document.querySelectorAll(".taskBox")
+  taskBox.forEach(task => {
+    if (task.querySelector('input').value.length == 0) {
+      task.remove()
+
+      const button = taskArea.nextElementSibling
+      button.classList.remove('hidden')
+    }
+  });
 }
 
 const taskTemplate = 
