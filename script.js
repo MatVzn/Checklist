@@ -46,26 +46,38 @@ function alert(type) {
   container.classList.remove('hidden')
   alert.classList.remove('hidden')
 
-  switch (type) {
-    case 'clear':
-      p.innerHTML = 'Tem certeza que deseja apagar todas as tarefas vazias?'
-      button.innerHTML = 'Limpar tarefas vazias'
-      button.classList.add('clearConfirm')
-      button.removeEventListener('click', clearAll)
-      button.addEventListener('click', clear)
-      h1.classList.add('clear')
-      h1.innerHTML = 'LIMPAR TAREFAS'
-      break
-
-    case 'clearAll':
-      p.innerHTML = 'Tem certeza que deseja apagar todas as tarefas?'
-      button.innerHTML = 'Limpar todas as tarefas'
-      button.classList.add('clearAllConfirm')
-      button.removeEventListener('click', clear)
-      button.addEventListener('click', clearAll)
-      h1.classList.add('clearAll')
-      h1.innerHTML = 'APAGAR TAREFAS'
-      break
+  if (taskArea.childElementCount == 0) {
+    p.innerHTML = 'Você não tem nenhuma tarefa para apagar.'
+    button.innerHTML = 'Voltar'
+    button.classList.add('hidden')
+    button.removeEventListener('click', clearAll)
+    button.addEventListener('click', clear)
+    h1.classList.add('clear')
+    h1.innerHTML = 'LIMPAR TAREFAS'
+  } else {
+    switch (type) {
+      case 'clear':
+        p.innerHTML = 'Tem certeza que deseja apagar todas as tarefas vazias?'
+        button.innerHTML = 'Limpar tarefas vazias'
+        button.classList.remove('hidden')
+        button.classList.add('clearConfirm')
+        button.removeEventListener('click', clearAll)
+        button.addEventListener('click', clear)
+        h1.classList.add('clear')
+        h1.innerHTML = 'LIMPAR TAREFAS'
+        break
+  
+      case 'clearAll':
+        p.innerHTML = 'Tem certeza que deseja apagar todas as tarefas?'
+        button.innerHTML = 'Limpar todas as tarefas'
+        button.classList.remove('hidden')
+        button.classList.add('clearAllConfirm')
+        button.removeEventListener('click', clear)
+        button.addEventListener('click', clearAll)
+        h1.classList.add('clearAll')
+        h1.innerHTML = 'APAGAR TAREFAS'
+        break
+    }
   }
 }
 
