@@ -9,10 +9,10 @@
   --highlight-primary: rgba(40, 41, 42, 0.5);
   --paper-color: #fdf8ea;
   --background-color: #f1c232;
-  --color-button: #f9e6ad;
-  --hightlight-button: #faecc1;
+  --color-button: #ffe79e;
+  --hightlight-button: #ffe084;
   --red-color: #ff5151;
-  --highlight-red: #ff7a7a;
+  --highlight-red: #ff3737;
 }
 
 .hidden {
@@ -97,11 +97,13 @@
 }
 
 .alertButtons button:hover {
+  color: white;
   background-color: var(--highlight-red);
 }
 
 
 .alertButtons .clearConfirm:hover {
+  color: white;
   background-color: var(--hightlight-button);
 }
 
