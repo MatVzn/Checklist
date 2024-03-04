@@ -13,6 +13,19 @@
 <body>
 
   <main>
+      
+    <div class="alert hidden">
+      <h1></h1>
+      <p></p>
+      <div class="alertButtons">
+        <button id="functionButton"></button>
+        <button class="cancelar" onclick="cancelar()">Cancelar</button>
+      </div>
+    </div>
+
+    <div id="container" class="hidden">
+
+    </div>
 
     <p class="shadow-cube">
       <p class="gray-cube"></p>
@@ -21,10 +34,10 @@
     <header>
       <h1>Tarefas</h1>
       <div class="buttons">
-        <button class="clear" onclick="clearEmpty()"> 
+        <button class="clear" onclick="alert('clear')"> 
           <img src="./assets/paper.svg"> 
         </button>
-        <button class="clearAll" onclick="clearAll()"> 
+        <button class="clearAll" onclick="alert('clearAll')"> 
           <img src="./assets/trash.svg"> 
         </button>
       </div>
@@ -33,12 +46,10 @@
     <p class="line"></p>
 
     <ul>
-
       <div class="taskArea">
       </div>
 
       <button class="add" onclick="newTask()"> + </button>
-
     </ul>
 
   </main>

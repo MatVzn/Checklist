@@ -11,17 +11,98 @@
   --background-color: #f1c232;
   --color-button: #f9e6ad;
   --hightlight-button: #faecc1;
-  --red-color: #ff6666;
+  --red-color: #ff5151;
   --highlight-red: #ff7a7a;
 }
 
 .hidden {
-  display: none!important;
+  display: none !important;
 }
 
 .check {
-  text-decoration: line-through!important;
-  pointer-events: none!important;
+  text-decoration: line-through !important;
+  pointer-events: none !important;
+}
+
+#container {
+  position: absolute;
+  z-index: 98;
+
+  height: 100%;
+  width: 100%;
+}
+
+.alert {
+  position: absolute;
+  z-index: 99;
+
+  text-align: center;
+
+  top: 30%;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+
+  border-radius: 20px;
+  outline: 10000px solid rgba(40, 41, 42, 0.3);
+
+  background-color: white;
+  height: 310px;
+  width: 400px;
+}
+
+.alert h1 {
+  border-radius: 20px 20px 0px 0px;
+
+  height: 40px;
+  padding: 20px;
+
+  font-weight: 700;
+}
+
+.alert h1.clearAll {
+  background-color: var(--red-color);
+}
+
+.alert h1.clear {
+  background-color: var(--color-button);
+}
+
+.alert p {
+  margin: 30px 70px;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.alertButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.alertButtons button {
+  all: unset;
+  border-radius: 10px;
+  height: 35px;
+  padding: 5px 10px;
+  font-weight: 600;
+
+  transition: all .2s;
+
+  background-color: var(--red-color);
+}
+
+.alertButtons .clearConfirm {
+  background-color: var(--color-button);
+}
+
+.alertButtons button:hover {
+  background-color: var(--highlight-red);
+}
+
+
+.alertButtons .clearConfirm:hover {
+  background-color: var(--hightlight-button);
 }
 
 body {
@@ -71,6 +152,10 @@ header {
   display: flex;
   flex-direction: row;
   gap: 8px;
+}
+
+.buttons img {
+  pointer-events: none;
 }
 
 button.clearAll {

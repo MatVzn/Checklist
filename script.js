@@ -32,23 +32,79 @@ function check(event) {
     }
 }
 
+function alert(type) {
+  const alert = document.querySelector('.alert')
+  const button = alert.querySelector('#functionButton')
+  const p = alert.querySelector('p')
+  const h1 = alert.querySelector('h1')
+  const container = document.querySelector('#container')
+
+  h1.classList.remove('clear', 'clearAll')
+
+  button.classList.remove('clearConfirm', 'clearAllConfirm')
+
+  container.classList.remove('hidden')
+  alert.classList.remove('hidden')
+
+  switch (type) {
+    case 'clear':
+      p.innerHTML = 'Tem certeza que deseja apagar todas as tarefas vazias?'
+      button.innerHTML = 'Limpar tarefas vazias'
+      button.classList.add('clearConfirm')
+      button.removeEventListener('click', clearAll)
+      button.addEventListener('click', clear)
+      h1.classList.add('clear')
+      h1.innerHTML = 'LIMPAR TAREFAS'
+      break
+
+    case 'clearAll':
+      p.innerHTML = 'Tem certeza que deseja apagar todas as tarefas?'
+      button.innerHTML = 'Limpar todas as tarefas'
+      button.classList.add('clearAllConfirm')
+      button.removeEventListener('click', clear)
+      button.addEventListener('click', clearAll)
+      h1.classList.add('clearAll')
+      h1.innerHTML = 'APAGAR TAREFAS'
+      break
+  }
+}
+
+function cancelar() {
+  const alert = document.querySelector('.alert')
+  const container = document.querySelector('#container')
+  alert.classList.add('hidden')
+  container.classList.add('hidden')
+}
+
+function clear() {
+  const taskBox = document.querySelectorAll(".taskBox")
+  taskBox.forEach(task => {
+  if (task.querySelector('input').value.length == 0) {
+    task.remove()
+
+  let button = taskArea.nextElementSibling
+  button.classList.remove('hidden')
+    }
+  }); 
+
+  let alert = document.querySelector('.alert')
+  alert.classList.add('hidden')
+
+  let container = document.querySelector('#container')
+  container.classList.add('hidden')
+}
+
 function clearAll() {
   taskArea.innerHTML = ''
 
-  const button = taskArea.nextElementSibling
+  let button = taskArea.nextElementSibling
   button.classList.remove('hidden')
-}
 
-function clearEmpty() {
-  const taskBox = document.querySelectorAll(".taskBox")
-  taskBox.forEach(task => {
-    if (task.querySelector('input').value.length == 0) {
-      task.remove()
+  let alert = document.querySelector('.alert')
+  alert.classList.add('hidden')
 
-      const button = taskArea.nextElementSibling
-      button.classList.remove('hidden')
-    }
-  });
+  let container = document.querySelector('#container')
+  container.classList.add('hidden')
 }
 
 const taskTemplate = 
