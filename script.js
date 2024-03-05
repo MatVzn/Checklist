@@ -1,4 +1,4 @@
-const taskArea = document.querySelector('.taskArea')
+const taskArea = document.querySelector('#taskArea')
 
 function newTask() {
   
@@ -33,7 +33,7 @@ function check(event) {
 }
 
 function alert(type) {
-  const alert = document.querySelector('.alert')
+  const alert = document.querySelector('#alert')
   const button = alert.querySelector('#functionButton')
   const p = alert.querySelector('p')
   const h1 = alert.querySelector('h1')
@@ -82,7 +82,7 @@ function alert(type) {
 }
 
 function cancelar() {
-  const alert = document.querySelector('.alert')
+  const alert = document.querySelector('#alert')
   const container = document.querySelector('#container')
   alert.classList.add('hidden')
   container.classList.add('hidden')
@@ -99,7 +99,7 @@ function clear() {
     }
   }); 
 
-  let alert = document.querySelector('.alert')
+  let alert = document.querySelector('#alert')
   alert.classList.add('hidden')
 
   let container = document.querySelector('#container')
@@ -112,7 +112,7 @@ function clearAll() {
   let button = taskArea.nextElementSibling
   button.classList.remove('hidden')
 
-  let alert = document.querySelector('.alert')
+  let alert = document.querySelector('#alert')
   alert.classList.add('hidden')
 
   let container = document.querySelector('#container')

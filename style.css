@@ -32,7 +32,7 @@
   width: 100%;
 }
 
-.alert {
+#alert {
   position: absolute;
   z-index: 99;
 
@@ -52,7 +52,7 @@
   width: 400px;
 }
 
-.alert h1 {
+#alert h1 {
   border-radius: 20px 20px 0px 0px;
 
   height: 40px;
@@ -61,15 +61,15 @@
   font-weight: 700;
 }
 
-.alert h1.clearAll {
+#alert h1.clearAll {
   background-color: var(--red-color);
 }
 
-.alert h1.clear {
+#alert h1.clear {
   background-color: var(--color-button);
 }
 
-.alert p {
+#alert p {
   margin: 30px 70px;
   font-size: 25px;
   font-weight: 600;
@@ -279,13 +279,13 @@ button.add:hover {
   border-bottom: 1px solid var(--highlight-primary);
 }
 
-.taskArea {
+#taskArea {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.taskArea input {
+#taskArea input {
   all: unset;
 
   border-radius: 5px;
@@ -300,6 +300,6 @@ button.add:hover {
   margin-bottom: 5px;
 }
 
-.taskArea input:focus {
+#taskArea input:focus {
   background-color: var(--hightlight-button);
 }
