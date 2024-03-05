@@ -122,5 +122,5 @@ function clearAll() {
 const taskTemplate = 
 `
   <img src="./assets/square.svg" class="checkBox" onclick="check(event)">
-  <input maxlength="37"></input>
+  <input placeholder="Tarefa vazia" maxlength="37"></input>
 `
