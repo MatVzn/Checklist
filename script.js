@@ -169,7 +169,7 @@ const taskTemplate =
     <img src="./assets/square.svg">
   </button>
 
-  <input id='taskInput' placeholder="Tarefa vazia" rows="5"></input>
+  <input autocomplete="off" id='taskInput' placeholder="Tarefa vazia"></input>
   
   <button type="button" id="deleteTaskButton" onclick="deleteTask(event)">
     <img src="./assets/x.svg">
