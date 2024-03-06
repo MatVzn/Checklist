@@ -131,7 +131,7 @@ body {
   box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.6)
 }
 
-.gray-cube {
+.yellow-cube {
   position: absolute;
   z-index: 3;
   right: -29px;
@@ -227,7 +227,7 @@ button.clear:hover {
   background-color: var(--hightlight-button);
 }
 
-main {
+section.checkList {
   position: absolute;
   z-index: 1;
   top: 50%;

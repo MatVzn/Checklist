@@ -12,23 +12,21 @@
 </head>
 <body>
 
-  <main>
-      
-    <div id="alertModal" class="hidden">
-      <h1></h1>
-      <p></p>
-      <div class="alertButtons">
-        <button id="functionButton"></button>
-        <button class="cancelar" onclick="cancelar()">Voltar</button>
-      </div>
+  <div id="alertModal" class="hidden">
+    <h1></h1>
+    <p></p>
+    <div class="alertButtons">
+      <button id="functionButton"></button>
+      <button class="cancelar" onclick="cancelar()">Voltar</button>
     </div>
+  </div>
 
-    <div id="container" class="hidden">
+  <div id="container" class="hidden"></div>
 
-    </div>
+  <section class="checkList">
 
     <p class="shadow-cube">
-      <p class="gray-cube"></p>
+      <p class="yellow-cube"></p>
     </p>
 
     <header>
@@ -47,16 +45,18 @@
 
     <p class="line"></p>
 
-    <form onsubmit="return false">
-      <ul>
-        <div id="taskArea">
-        </div>
-
-        <button class="add" onclick="newTask()"> + </button>
-      </ul>
-    </form>
+    <main>
+      <form onsubmit="return false">
+        <ul>
+          <div id="taskArea">
+          </div>
+        
+          <button class="add" onclick="newTask()"> + </button>
+        </ul>
+      </form>
+    </main>
     
-  </main>
+  </section>
 
   <script src="./script.js"></script>
 </body>
