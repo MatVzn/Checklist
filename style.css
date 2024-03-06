@@ -154,6 +154,23 @@ header {
   padding-right: 55px;
 }
 
+h1 input{
+  all: unset;
+
+  font-size: 38px;
+  font-weight: 600;
+  width: 320px;
+
+  border-radius: 5px;
+  padding: 5px;
+
+  transition: background-color .1s;
+}
+
+h1 input:focus {
+  background-color: var(--hightlight-button);
+}
+
 .buttons {
   display: flex;
   flex-direction: row;
