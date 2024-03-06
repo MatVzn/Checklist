@@ -24,17 +24,18 @@ function newTask() {
 }
 
 function check(event) {
-  checkBox = event.target
+  const checkBox = event.target.querySelector('img') 
+  const input = event.target.nextElementSibling
     if (checkBox.src.includes('square.svg')) {
-      if (checkBox.nextElementSibling.value.length == 0) {
-        checkBox.nextElementSibling.focus()
+      if (input.value.length == 0) {
+        input.focus()
       } else {
         checkBox.src = './assets/check.svg'
-        checkBox.nextElementSibling.classList.add('check')
+        input.classList.add('check')
       }
     } else {
       checkBox.src = './assets/square.svg'
-      checkBox.nextElementSibling.classList.remove('check')
+      input.classList.remove('check')
     }
 }
 
@@ -127,6 +128,8 @@ function clearAll() {
 
 const taskTemplate = 
 `
-  <img src="./assets/square.svg" class="checkBox" onclick="check(event)">
+  <button class="checkBox" onclick="check(event)">
+    <img src="./assets/square.svg">
+  </button>
   <input placeholder="Tarefa vazia" maxlength="37"></input>
 `
