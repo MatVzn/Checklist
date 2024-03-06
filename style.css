@@ -265,6 +265,7 @@ ul {
   border-radius: 5px;
   height: 30px;
   width: 30px;
+  cursor: pointer;
 }
 
 #checkBox:hover {
@@ -354,6 +355,7 @@ button.add:hover {
 }
 
 #deleteTaskButton img {
+  pointer-events: none;
   height: 15px;
 }
 
