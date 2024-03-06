@@ -14,7 +14,7 @@
 
   <main>
       
-    <div id="alert" class="hidden">
+    <div id="alertModal" class="hidden">
       <h1></h1>
       <p></p>
       <div class="alertButtons">
@@ -36,10 +36,10 @@
         <input autofocus placeholder="Nome das notas" maxlength="11" value="Tarefas" type="text">
       </h1>
       <div class="buttons">
-        <button class="clear" onclick="alert('clear')"> 
+        <button class="clear" onclick="alertModal('clear')"> 
           <img src="./assets/paper.svg"> 
         </button>
-        <button class="clearAll" onclick="alert('clearAll')"> 
+        <button class="clearAll" onclick="alertModal('clearAll')"> 
           <img src="./assets/trash.svg"> 
         </button>
       </div>

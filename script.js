@@ -5,6 +5,7 @@ function newTask() {
   if (taskArea.childElementCount >= 15) {
     const button = taskArea.nextElementSibling
     button.classList.add('hidden')
+
   } else {
     let div = document.createElement('div')
     div.setAttribute('class', 'taskBox')
@@ -14,6 +15,11 @@ function newTask() {
 
     const inputArea = div.querySelector('input')
     inputArea.focus()
+
+    if (taskArea.childElementCount >= 15) {
+      const button = taskArea.nextElementSibling
+      button.classList.add('hidden')
+    }
   }
 }
 
@@ -32,11 +38,11 @@ function check(event) {
     }
 }
 
-function alert(type) {
-  const alert = document.querySelector('#alert')
-  const button = alert.querySelector('#functionButton')
-  const p = alert.querySelector('p')
-  const h1 = alert.querySelector('h1')
+function alertModal(type) {
+  const alertModal = document.querySelector('#alertModal')
+  const button = alertModal.querySelector('#functionButton')
+  const p = alertModal.querySelector('p')
+  const h1 = alertModal.querySelector('h1')
   const container = document.querySelector('#container')
 
   h1.classList.remove('clear', 'clearAll')
@@ -44,7 +50,7 @@ function alert(type) {
   button.classList.remove('clearConfirm', 'clearAllConfirm')
 
   container.classList.remove('hidden')
-  alert.classList.remove('hidden')
+  alertModal.classList.remove('hidden')
 
   if (taskArea.childElementCount == 0) {
     p.innerHTML = 'Você não tem nenhuma tarefa para apagar.'
@@ -82,9 +88,9 @@ function alert(type) {
 }
 
 function cancelar() {
-  const alert = document.querySelector('#alert')
+  const alertModal = document.querySelector('#alertModal')
   const container = document.querySelector('#container')
-  alert.classList.add('hidden')
+  alertModal.classList.add('hidden')
   container.classList.add('hidden')
 }
 
@@ -99,8 +105,8 @@ function clear() {
     }
   }); 
 
-  let alert = document.querySelector('#alert')
-  alert.classList.add('hidden')
+  let alertModal = document.querySelector('#alertModal')
+  alertModal.classList.add('hidden')
 
   let container = document.querySelector('#container')
   container.classList.add('hidden')
@@ -112,8 +118,8 @@ function clearAll() {
   let button = taskArea.nextElementSibling
   button.classList.remove('hidden')
 
-  let alert = document.querySelector('#alert')
-  alert.classList.add('hidden')
+  let alertModal = document.querySelector('#alertModal')
+  alertModal.classList.add('hidden')
 
   let container = document.querySelector('#container')
   container.classList.add('hidden')

@@ -43,7 +43,7 @@ body {
   width: 100%;
 }
 
-#alert {
+#alertModal {
   position: absolute;
   z-index: 99;
 
@@ -56,14 +56,14 @@ body {
   transform: translateX(-50%);
 
   border-radius: 20px;
-  outline: 10000px solid rgba(40, 41, 42, 0.3);
+  outline: 10000px solid rgba(40, 41, 42, 0.6);
 
   background-color: white;
   height: 310px;
   width: 400px;
 }
 
-#alert h1 {
+#alertModal h1 {
   border-radius: 20px 20px 0px 0px;
 
   height: 40px;
@@ -72,15 +72,15 @@ body {
   font-weight: 700;
 }
 
-#alert h1.clearAll {
+#alertModal h1.clearAll {
   background-color: var(--red-color);
 }
 
-#alert h1.clear {
+#alertModal h1.clear {
   background-color: var(--color-button);
 }
 
-#alert p {
+#alertModal p {
   margin: 30px 70px;
   font-size: 25px;
   font-weight: 600;
