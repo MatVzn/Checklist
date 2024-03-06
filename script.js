@@ -26,6 +26,7 @@ function newTask() {
 function check(event) {
   const checkBox = event.target.querySelector('img') 
   const input = event.target.nextElementSibling
+
     if (checkBox.src.includes('square.svg')) {
       if (input.value.length == 0) {
         input.focus()
@@ -37,6 +38,16 @@ function check(event) {
       checkBox.src = './assets/square.svg'
       input.classList.remove('check')
     }
+}
+
+function deleteTask(event) {
+  let task = event.target.parentElement
+
+  if (task.nodeName == 'BUTTON') {
+    task = task.parentElement
+  }
+
+  task.remove()
 }
 
 function alertModal(type) {
@@ -128,8 +139,13 @@ function clearAll() {
 
 const taskTemplate = 
 `
-  <button class="checkBox" onclick="check(event)">
+  <button type="button" id="checkBox" onclick="check(event)">
     <img src="./assets/square.svg">
   </button>
+
   <input placeholder="Tarefa vazia" maxlength="37"></input>
+  
+  <button type="button" id="deleteTaskButton" onclick="deleteTask(event)">
+    <img src="./assets/x.svg">
+  </button>
 `
