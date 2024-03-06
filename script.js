@@ -2,7 +2,7 @@ const taskArea = document.querySelector('#taskArea')
 
 function newTask() {
   
-  if (taskArea.childElementCount >= 15) {
+  if (taskArea.childElementCount >= 17) {
     const button = taskArea.nextElementSibling
     button.classList.add('hidden')
 
@@ -16,7 +16,7 @@ function newTask() {
     const inputArea = div.querySelector('input')
     inputArea.focus()
 
-    if (taskArea.childElementCount >= 15) {
+    if (taskArea.childElementCount >= 17) {
       const button = taskArea.nextElementSibling
       button.classList.add('hidden')
     }

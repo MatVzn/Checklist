@@ -233,7 +233,7 @@ section.checkList {
   top: 50%;
   transform: translateY(-50%);
 
-  height: 740px;
+  height: 760px;
   width: 500px;
 
   padding: 25px;
@@ -314,7 +314,7 @@ button.add:hover {
 #taskArea {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 5px;
 }
 
 #taskArea input {
