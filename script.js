@@ -42,12 +42,14 @@ function check(event) {
 
 function deleteTask(event) {
   let task = event.target.parentElement
+  const button = taskArea.nextElementSibling
 
   if (task.nodeName == 'BUTTON') {
     task = task.parentElement
   }
 
   task.remove()
+  button.classList.remove('hidden')
 }
 
 function alertModal(type) {
