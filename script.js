@@ -1,7 +1,25 @@
 const taskArea = document.querySelector('#taskArea')
 
+// Observer que altera o tamanho máximo dos inputs
+// Baseado na largura do input
+
+const app = document.querySelector('#checkList')
+const titleInput = app.querySelector('#titleList')
+const taskInput = app.querySelector('#taskInput')
+
+const observer = new ResizeObserver(item => {
+  const recizeTitleInput = item[0]
+  const recizeTaskInput = item[1]
+
+  titleInput.maxLength = (recizeTitleInput.contentRect.width / 30)
+  taskInput.maxLength = (recizeTaskInput.contentRect.width / 13)
+})
+
+observer.observe(titleInput)
+observer.observe(taskInput)
+
 function newTask() {
-  
+
   if (taskArea.childElementCount >= 17) {
     const button = taskArea.nextElementSibling
     button.classList.add('hidden')
@@ -24,6 +42,7 @@ function newTask() {
 }
 
 function check(event) {
+
   const checkBox = event.target.querySelector('img') 
   const input = event.target.nextElementSibling
 
@@ -41,6 +60,7 @@ function check(event) {
 }
 
 function deleteTask(event) {
+
   let task = event.target.parentElement
   const button = taskArea.nextElementSibling
 
@@ -53,6 +73,7 @@ function deleteTask(event) {
 }
 
 function alertModal(type) {
+
   const alertModal = document.querySelector('#alertModal')
   const button = alertModal.querySelector('#functionButton')
   const p = alertModal.querySelector('p')
@@ -102,6 +123,7 @@ function alertModal(type) {
 }
 
 function cancelar() {
+
   const alertModal = document.querySelector('#alertModal')
   const container = document.querySelector('#container')
   alertModal.classList.add('hidden')
@@ -109,6 +131,7 @@ function cancelar() {
 }
 
 function clear() {
+
   const taskBox = document.querySelectorAll(".taskBox")
   taskBox.forEach(task => {
   if (task.querySelector('input').value.length == 0) {
@@ -127,6 +150,7 @@ function clear() {
 }
 
 function clearAll() {
+
   taskArea.innerHTML = ''
 
   let button = taskArea.nextElementSibling
@@ -145,7 +169,7 @@ const taskTemplate =
     <img src="./assets/square.svg">
   </button>
 
-  <input placeholder="Tarefa vazia" maxlength="37"></input>
+  <input id='taskInput' placeholder="Tarefa vazia" rows="5"></input>
   
   <button type="button" id="deleteTaskButton" onclick="deleteTask(event)">
     <img src="./assets/x.svg">

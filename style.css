@@ -159,7 +159,7 @@ h1 input{
 
   font-size: 38px;
   font-weight: 600;
-  width: 320px;
+  width: 80%;
 
   border-radius: 5px;
   padding: 5px;
@@ -324,7 +324,6 @@ button.add:hover {
   border-radius: 5px;
   padding: 5px;
 
-  height: auto;
   width: 90%;
   height: 19px;
 
@@ -361,4 +360,16 @@ button.add:hover {
 
 #deleteTaskButton:hover {
   background-color: var(--highlight-red);
+}
+
+
+/* Mobile and Tablets */
+@media (max-width: 768px) {
+  body {
+    height: 100vh;
+    overflow-x: hidden;
+  }
+  section.checkList {
+    width: 80vw;
+  }
 }

@@ -23,7 +23,7 @@
 
   <div id="container" class="hidden"></div>
 
-  <section class="checkList">
+  <section id="checkList" class="checkList">
 
     <p class="shadow-cube">
       <p class="yellow-cube"></p>
@@ -31,7 +31,7 @@
 
     <header>
       <h1>
-        <input autofocus placeholder="Nome das notas" maxlength="11" value="Tarefas" type="text">
+        <input id="titleList" autofocus placeholder="Nome das notas" value="Tarefas" type="text">
       </h1>
       <div class="buttons">
         <button class="clear" onclick="alertModal('clear')"> 
@@ -49,6 +49,17 @@
       <form onsubmit="return false">
         <ul>
           <div id="taskArea">
+            <div class="taskBox">
+              
+              <button type="button" id="checkBox" onclick="check(event)">
+                <img src="./assets/square.svg">
+              </button>
+              <input id="taskInput" placeholder="Tarefa vazia" rows="5">             
+              <button type="button" id="deleteTaskButton" onclick="deleteTask(event)">
+                <img src="./assets/x.svg">
+              </button>
+
+            </div>
           </div>
         
           <button class="add" onclick="newTask()"> + </button>
