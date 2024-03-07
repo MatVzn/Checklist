@@ -3,21 +3,6 @@ const taskArea = document.querySelector('#taskArea')
 // Observer que altera o tamanho máximo dos inputs
 // Baseado na largura do input
 
-const app = document.querySelector('#checkList')
-const titleInput = app.querySelector('#titleList')
-const taskInput = app.querySelector('#taskInput')
-
-const observer = new ResizeObserver(item => {
-  const recizeTitleInput = item[0]
-  const recizeTaskInput = item[1]
-
-  titleInput.maxLength = (recizeTitleInput.contentRect.width / 30)
-  taskInput.maxLength = (recizeTaskInput.contentRect.width / 13)
-})
-
-observer.observe(titleInput)
-observer.observe(taskInput)
-
 function newTask() {
 
   if (taskArea.childElementCount >= 17) {
