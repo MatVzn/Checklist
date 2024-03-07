@@ -5,25 +5,14 @@ const taskArea = document.querySelector('#taskArea')
 
 function newTask() {
 
-  if (taskArea.childElementCount >= 100) {
-    const button = taskArea.nextElementSibling
-    button.classList.add('hidden')
+  let div = document.createElement('div')
+  div.setAttribute('class', 'taskBox')
+  div.innerHTML = taskTemplate
 
-  } else {
-    let div = document.createElement('div')
-    div.setAttribute('class', 'taskBox')
-    div.innerHTML = taskTemplate
+  taskArea.appendChild(div)
 
-    taskArea.appendChild(div)
-
-    const inputArea = div.querySelector('input')
-    inputArea.focus()
-
-    if (taskArea.childElementCount >= 100) {
-      const button = taskArea.nextElementSibling
-      button.classList.add('hidden')
-    }
-  }
+  const inputArea = div.querySelector('input')
+  inputArea.focus()
 }
 
 function check(event) {
