@@ -23,51 +23,55 @@
 
   <div id="container" class="hidden"></div>
 
-  <section id="checkList" class="checkList">
+  <div class="center">
+    <section id="checkList" class="checkList">
 
-    <p class="shadow-cube">
-      <p class="yellow-cube"></p>
-    </p>
-
-    <header>
-      <h1>
-        <input id="titleList" autofocus placeholder="Nome das notas" value="Tarefas" type="text">
-      </h1>
-      <div class="buttons">
-        <button class="clear" onclick="alertModal('clear')"> 
-          <img src="./assets/paper.svg"> 
-        </button>
-        <button class="clearAll" onclick="alertModal('clearAll')"> 
-          <img src="./assets/trash.svg"> 
-        </button>
+      <div class="shadow-cube">
+        <div class="yellow-cube"></div>
       </div>
-    </header>
 
-    <p class="line"></p>
+      <header>
+        <h1>
+          <input maxlength="9" autocomplete="off" id="titleList" autofocus placeholder="Sem nome" type="text">
+        </h1>
+        <div class="buttons">
+          <button class="clear" onclick="alertModal('clear')"> 
+            <img src="./assets/paper.svg"> 
+          </button>
+          <button class="clearAll" onclick="alertModal('clearAll')"> 
+            <img src="./assets/trash.svg"> 
+          </button>
+        </div>
+      </header>
 
-    <main>
-      <form onsubmit="return false">
-        <ul>
-          <div id="taskArea">
-            <div class="taskBox">
-              
-              <button type="button" id="checkBox" onclick="check(event)">
-                <img src="./assets/square.svg">
-              </button>
-              <input autocomplete="off" id="taskInput" placeholder="Tarefa vazia" rows="5">             
-              <button type="button" id="deleteTaskButton" onclick="deleteTask(event)">
-                <img src="./assets/x.svg">
-              </button>
+      <p class="line"></p>
 
+      <main>
+        <form onsubmit="return false">
+          <ul>
+            <div id="taskArea">
+              <div class="taskBox">
+
+                <button type="button" id="checkBox" onclick="check(event)">
+                  <img src="./assets/square.svg">
+                </button>
+                <input maxlength="32" autocomplete="off" id="taskInput" placeholder="Tarefa vazia" rows="5">             
+                <button type="button" id="deleteTaskButton" onclick="deleteTask(event)">
+                  <img src="./assets/x.svg">
+                </button>
+
+              </div>
             </div>
-          </div>
-        
-          <button class="add" onclick="newTask()"> + </button>
-        </ul>
-      </form>
-    </main>
+          
+            <button class="add" onclick="newTask()"> + </button>
+          </ul>
+        </form>
+      </main>
     
-  </section>
+    </section>
+  </div>
+
+  <div></div>
 
   <script src="./script.js"></script>
 </body>

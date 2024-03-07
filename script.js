@@ -5,7 +5,7 @@ const taskArea = document.querySelector('#taskArea')
 
 function newTask() {
 
-  if (taskArea.childElementCount >= 17) {
+  if (taskArea.childElementCount >= 100) {
     const button = taskArea.nextElementSibling
     button.classList.add('hidden')
 
@@ -19,7 +19,7 @@ function newTask() {
     const inputArea = div.querySelector('input')
     inputArea.focus()
 
-    if (taskArea.childElementCount >= 17) {
+    if (taskArea.childElementCount >= 100) {
       const button = taskArea.nextElementSibling
       button.classList.add('hidden')
     }
@@ -154,7 +154,7 @@ const taskTemplate =
     <img src="./assets/square.svg">
   </button>
 
-  <input autocomplete="off" id='taskInput' placeholder="Tarefa vazia"></input>
+  <input maxlength="32" autocomplete="off" id='taskInput' placeholder="Tarefa vazia"></input>
   
   <button type="button" id="deleteTaskButton" onclick="deleteTask(event)">
     <img src="./assets/x.svg">
