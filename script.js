@@ -1,18 +1,28 @@
 const taskArea = document.querySelector('#taskArea')
 
-// Observer que altera o tamanho máximo dos inputs
-// Baseado na largura do input
+function savePage() {
+  
+}
 
 function newTask() {
 
-  let div = document.createElement('div')
-  div.setAttribute('class', 'taskBox')
-  div.innerHTML = taskTemplate
+  if (taskArea.childElementCount >= 29) {
+    const button = taskArea.nextElementSibling
+    button.classList.add('hidden')
 
-  taskArea.appendChild(div)
+  } else {
+    let div = document.createElement('div')
+    div.setAttribute('class', 'taskBox')
+    div.innerHTML = taskTemplate
+    taskArea.appendChild(div)
+    const inputArea = div.querySelector('input')
+    inputArea.focus()
 
-  const inputArea = div.querySelector('input')
-  inputArea.focus()
+    if (taskArea.childElementCount >= 29) {
+      const button = taskArea.nextElementSibling
+      button.classList.add('hidden')
+    }
+  }
 }
 
 function check(event) {
