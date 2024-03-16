@@ -70,7 +70,15 @@ function save() {
       localStorage.setItem('TaskList', JSON.stringify(TaskList))
     } else {
       localStorage.removeItem('TaskList')
-    }
+  }
+
+  const alertSave = document.querySelector('#alertSave')
+
+  setTimeout(() => {
+    alertSave.classList.remove('hidden')
+  });
+  
+  alertSave.classList.add('hidden')
 }
 
 function newTask() {
