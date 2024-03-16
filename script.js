@@ -24,28 +24,28 @@ const taskTemplate =
 
 titleArea.value = Title
 
-for (task in TaskListArray) {
+if (TaskListArray.length > 0) {
+  TaskListArray.forEach((taskText) => {
 
-  let div = document.createElement('div')
-  div.setAttribute('class', 'taskBox')
-  div.innerHTML = taskTemplate
-  taskArea.appendChild(div)
+    let div = document.createElement('div')
+    div.setAttribute('class', 'taskBox')
+    div.innerHTML = taskTemplate
+    taskArea.appendChild(div)
 
-  let input = div.querySelector('input')
-  input.value = task
-  
-  if (taskArea.childElementCount >= 29) {
-    const button = taskArea.nextElementSibling
-    button.classList.add('hidden')
-  }
+    let input = div.querySelector('input')
+    input.value = taskText
 
-  if (taskArea.childElementCount > 1) {
-    taskArea.firstChild.remove()
-  }
+  })
 }
 
+if (taskArea.childElementCount >= 29) {
+  const button = taskArea.nextElementSibling
+  button.classList.add('hidden')
+}
 
-
+if (taskArea.childElementCount > 1) {
+  taskArea.firstElementChild.remove()
+}
 
 function save() {
 
@@ -185,4 +185,5 @@ function clearAll() {
   let container = document.querySelector('#container')
   container.classList.add('hidden')
 
+  newTask()
 }
