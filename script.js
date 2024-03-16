@@ -77,7 +77,7 @@ function save() {
   setTimeout(() => {
     alertSave.classList.remove('hidden')
   });
-  
+
   alertSave.classList.add('hidden')
 }
 
@@ -118,8 +118,6 @@ function check(event) {
       checkBox.src = './assets/square.svg'
       input.classList.remove('check')
     }
-
-  save()
 }
 
 function deleteTask(event) {
