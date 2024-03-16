@@ -25,7 +25,7 @@ const taskTemplate =
 titleArea.value = Title
 
 if (TaskListArray.length > 0) {
-  TaskListArray.forEach((taskText) => {
+  TaskListArray.map((taskObject) => {
 
     let div = document.createElement('div')
     div.setAttribute('class', 'taskBox')
@@ -33,8 +33,13 @@ if (TaskListArray.length > 0) {
     taskArea.appendChild(div)
 
     let input = div.querySelector('input')
-    input.value = taskText
+    input.value = taskObject[0].name
 
+    let checkBox = div.querySelector('img')
+    if (taskObject[0].checked) {
+      checkBox.src = './assets/check.svg'
+      input.classList.add('check')
+    }
   })
 }
 
@@ -51,7 +56,7 @@ function save() {
 
   let inputsArea = taskArea.querySelectorAll("input")
 
-  var TaskList = []
+  TaskList = []
 
   if (titleArea.value.length > 0) {
     var Title = titleArea.value
@@ -62,7 +67,9 @@ function save() {
 
   inputsArea.forEach(task => {
     if (task.value.length > 0) {
-      TaskList.push(task.value)
+      TaskList.push([
+        { name: task.value, checked: task.classList.contains('check') }
+      ])
     }
   });
 
@@ -70,7 +77,7 @@ function save() {
       localStorage.setItem('TaskList', JSON.stringify(TaskList))
     } else {
       localStorage.removeItem('TaskList')
-  }
+    }
 
   const alertSave = document.querySelector('#alertSave')
 
