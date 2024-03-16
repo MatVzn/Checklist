@@ -1,7 +1,76 @@
 const taskArea = document.querySelector('#taskArea')
+const titleArea = document.querySelector("#titleList")
 
-function savePage() {
+var TaskList = []
+
+var Title = localStorage.getItem('Title')
+var TaskListString = localStorage.getItem('TaskList')
+var TaskListArray = JSON.parse(TaskListString)
+
+const taskTemplate = 
+`
+  <button type="button" id="checkBox" onclick="check(event)">
+    <img src="./assets/square.svg">
+  </button>
+
+  <input spellcheck="false" maxlength="32" autocomplete="off" id='taskInput' placeholder="Tarefa vazia"></input>
   
+  <button type="button" id="deleteTaskButton" onclick="deleteTask(event)">
+    <img src="./assets/x.svg">
+  </button>
+`
+
+// Resconstrói a página com base no LocalSave do usuário
+
+titleArea.value = Title
+
+for (task in TaskListArray) {
+
+  let div = document.createElement('div')
+  div.setAttribute('class', 'taskBox')
+  div.innerHTML = taskTemplate
+  taskArea.appendChild(div)
+
+  let input = div.querySelector('input')
+  input.value = task
+  
+  if (taskArea.childElementCount >= 29) {
+    const button = taskArea.nextElementSibling
+    button.classList.add('hidden')
+  }
+
+  if (taskArea.childElementCount > 1) {
+    taskArea.firstChild.remove()
+  }
+}
+
+
+
+
+function save() {
+
+  let inputsArea = taskArea.querySelectorAll("input")
+
+  var TaskList = []
+
+  if (titleArea.value.length > 0) {
+    var Title = titleArea.value
+    localStorage.setItem('Title', Title)
+  } else {
+    localStorage.removeItem('Title')
+  }
+
+  inputsArea.forEach(task => {
+    if (task.value.length > 0) {
+      TaskList.push(task.value)
+    }
+  });
+
+    if (TaskList.length > 0) {
+      localStorage.setItem('TaskList', JSON.stringify(TaskList))
+    } else {
+      localStorage.removeItem('TaskList')
+    }
 }
 
 function newTask() {
@@ -41,6 +110,8 @@ function check(event) {
       checkBox.src = './assets/square.svg'
       input.classList.remove('check')
     }
+
+  save()
 }
 
 function deleteTask(event) {
@@ -56,7 +127,7 @@ function deleteTask(event) {
   button.classList.remove('hidden')
 }
 
-function alertModal(type) {
+function alertModal() {
 
   const alertModal = document.querySelector('#alertModal')
   const button = alertModal.querySelector('#functionButton')
@@ -76,33 +147,19 @@ function alertModal(type) {
     button.innerHTML = 'Voltar'
     button.classList.add('hidden')
     button.removeEventListener('click', clearAll)
-    button.addEventListener('click', clear)
     h1.classList.add('clear')
     h1.innerHTML = 'LIMPAR TAREFAS'
+
   } else {
-    switch (type) {
-      case 'clear':
-        p.innerHTML = 'Tem certeza que deseja apagar todas as tarefas vazias?'
-        button.innerHTML = 'Limpar tarefas vazias'
-        button.classList.remove('hidden')
-        button.classList.add('clearConfirm')
-        button.removeEventListener('click', clearAll)
-        button.addEventListener('click', clear)
-        h1.classList.add('clear')
-        h1.innerHTML = 'LIMPAR TAREFAS'
-        break
-  
-      case 'clearAll':
-        p.innerHTML = 'Tem certeza que deseja apagar todas as tarefas?'
-        button.innerHTML = 'Limpar todas as tarefas'
-        button.classList.remove('hidden')
-        button.classList.add('clearAllConfirm')
-        button.removeEventListener('click', clear)
-        button.addEventListener('click', clearAll)
-        h1.classList.add('clearAll')
-        h1.innerHTML = 'APAGAR TAREFAS'
-        break
-    }
+
+    p.innerHTML = 'Tem certeza que deseja apagar todas as tarefas?'
+    button.innerHTML = 'Limpar todas as tarefas'
+    button.classList.remove('hidden')
+    button.classList.add('clearAllConfirm')
+    button.addEventListener('click', clearAll)
+    h1.classList.add('clearAll')
+    h1.innerHTML = 'APAGAR TAREFAS'
+
   }
 }
 
@@ -112,25 +169,7 @@ function cancelar() {
   const container = document.querySelector('#container')
   alertModal.classList.add('hidden')
   container.classList.add('hidden')
-}
 
-function clear() {
-
-  const taskBox = document.querySelectorAll(".taskBox")
-  taskBox.forEach(task => {
-  if (task.querySelector('input').value.length == 0) {
-    task.remove()
-
-  let button = taskArea.nextElementSibling
-  button.classList.remove('hidden')
-    }
-  }); 
-
-  let alertModal = document.querySelector('#alertModal')
-  alertModal.classList.add('hidden')
-
-  let container = document.querySelector('#container')
-  container.classList.add('hidden')
 }
 
 function clearAll() {
@@ -145,17 +184,5 @@ function clearAll() {
 
   let container = document.querySelector('#container')
   container.classList.add('hidden')
+
 }
-
-const taskTemplate = 
-`
-  <button type="button" id="checkBox" onclick="check(event)">
-    <img src="./assets/square.svg">
-  </button>
-
-  <input maxlength="32" autocomplete="off" id='taskInput' placeholder="Tarefa vazia"></input>
-  
-  <button type="button" id="deleteTaskButton" onclick="deleteTask(event)">
-    <img src="./assets/x.svg">
-  </button>
-`

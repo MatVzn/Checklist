@@ -32,13 +32,13 @@
 
       <header>
         <h1>
-          <input autofocus maxlength="9" autocomplete="off" id="titleList" placeholder="Sem nome" type="text">
+          <input spellcheck="false" maxlength="9" autocomplete="off" id="titleList" placeholder="Nome" type="text">
         </h1>
         <div class="buttons">
-          <button class="clear" onclick="alertModal('clear')"> 
-            <img src="./assets/paper.svg"> 
+          <button class="save" onclick="save()"> 
+            <img src="./assets/save.svg"> 
           </button>
-          <button class="clearAll" onclick="alertModal('clearAll')"> 
+          <button class="clearAll" onclick="alertModal()"> 
             <img src="./assets/trash.svg"> 
           </button>
         </div>
@@ -55,7 +55,7 @@
                 <button type="button" id="checkBox" onclick="check(event)">
                   <img src="./assets/square.svg">
                 </button>
-                <input maxlength="32" autocomplete="off" id="taskInput" placeholder="Tarefa vazia" rows="5">             
+                <input spellcheck="false" maxlength="32" autocomplete="off" id="taskInput" placeholder="Tarefa vazia">             
                 <button type="button" id="deleteTaskButton" onclick="deleteTask(event)">
                   <img src="./assets/x.svg">
                 </button>
