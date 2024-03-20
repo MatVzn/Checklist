@@ -17,6 +17,24 @@
   --highlight-green: #82c576;
 }
 
+.dark {
+  --primary-color: rgb(0, 0, 0);
+  --highlight-primary: rgba(0, 0, 0, 0.534);
+  --paper-color: #494a4b;
+  --background-color: #1e2124;
+  --color-button: #998449;
+  --hightlight-button: #bdae73;
+}
+
+.light {
+  --primary-color: #272829;
+  --highlight-primary: rgba(40, 41, 42, 0.5);
+  --paper-color: #fdf8ea;
+  --background-color: #f1c232;
+  --color-button: #ffe79e;
+  --hightlight-button: #ffe084;
+}
+
 body {
   height: 100vh;
   width: 100vw;

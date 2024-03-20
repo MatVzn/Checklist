@@ -24,7 +24,7 @@ const taskTemplate =
 
 titleArea.value = Title
 
-if (TaskListArray.length > 0) {
+if (TaskListArray && TaskListArray.length > 0) {
   TaskListArray.map((taskObject) => {
 
     let div = document.createElement('div')
@@ -199,4 +199,19 @@ function clearAll() {
   container.classList.add('hidden')
 
   newTask()
+}
+
+function changeTheme() {
+  const html = document.documentElement
+
+  switch (html.className) {
+    case 'light':
+      html.classList.remove('light')
+      html.classList.add('dark')
+      break
+    case 'black':
+      html.classList.remove('dark')
+      html.classList.add('light')
+      break
+  }
 }
