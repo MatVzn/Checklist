@@ -13,7 +13,7 @@ const taskTemplate =
     <img src="./assets/square.svg">
   </button>
 
-  <input spellcheck="false" maxlength="32" autocomplete="off" id='taskInput' placeholder="Tarefa vazia"></input>
+  <input spellcheck="false" maxlength="50" autocomplete="off" id='taskInput' placeholder="Tarefa vazia"></input>
   
   <button type="button" id="deleteTaskButton" onclick="deleteTask(event)">
     <img src="./assets/x.svg">

@@ -11,13 +11,7 @@
     <title>Check</title>
 </head>
 <body>
-  <!-- TERMINAR ESSA PARTE -->
-  <div>
-    <button id="themeButton" onclick="changeTheme()">
-      <div id="themeIcon"></div>
-    </button>
-  </div>
-  <!-- TERMINAR ESSA PARTE -->
+
   <div id="alertModal" class="hidden">
     <h1></h1>
     <p></p>
@@ -42,9 +36,12 @@
 
       <header>
         <h1>
-          <input spellcheck="false" maxlength="9" autocomplete="off" id="titleList" placeholder="Nome" type="text">
+          <input spellcheck="false" maxlength="12" autocomplete="off" id="titleList" placeholder="Nome" type="text">
         </h1>
         <div class="buttons">
+          <button id="themeButton" onclick="changeTheme()">
+            <img src="./assets/eclipse.svg" id="themeIcon">
+          </button>
           <button class="save" onclick="save()"> 
             <img src="./assets/save.svg"> 
           </button>
@@ -64,7 +61,7 @@
                 <button type="button" id="checkBox" onclick="check(event)">
                   <img src="./assets/square.svg">
                 </button>
-                <input spellcheck="false" maxlength="32" autocomplete="off" id="taskInput" placeholder="Tarefa vazia">       
+                <input spellcheck="false" maxlength="50" autocomplete="off" id="taskInput" placeholder="Tarefa vazia">       
                 <button type="button" id="deleteTaskButton" onclick="deleteTask(event)">
                   <img src="./assets/x.svg">
                 </button>
