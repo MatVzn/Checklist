@@ -209,7 +209,7 @@ function changeTheme() {
       html.classList.remove('light')
       html.classList.add('dark')
       break
-    case 'black':
+    case 'dark':
       html.classList.remove('dark')
       html.classList.add('light')
       break

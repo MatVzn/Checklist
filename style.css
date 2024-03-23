@@ -5,12 +5,6 @@
 }
 
 :root {
-  --primary-color: #272829;
-  --highlight-primary: rgba(40, 41, 42, 0.5);
-  --paper-color: #fdf8ea;
-  --background-color: #f1c232;
-  --color-button: #ffe79e;
-  --hightlight-button: #ffe084;
   --red-color: #ff5151;
   --highlight-red: #ff3737;
   --green-color: #a5dd9b;
@@ -18,21 +12,21 @@
 }
 
 .dark {
-  --primary-color: rgb(0, 0, 0);
+  --primary-color: white;
   --highlight-primary: rgba(0, 0, 0, 0.534);
-  --paper-color: #494a4b;
-  --background-color: #1e2124;
-  --color-button: #998449;
-  --hightlight-button: #bdae73;
+  --paper-color: #3A3A3A;
+  --background-color: #202020;
+  --color-button: #737373;
+  --hightlight-button: #202020;
 }
 
 .light {
   --primary-color: #272829;
   --highlight-primary: rgba(40, 41, 42, 0.5);
-  --paper-color: #fdf8ea;
-  --background-color: #f1c232;
-  --color-button: #ffe79e;
-  --hightlight-button: #ffe084;
+  --paper-color: #eff6ff;
+  --background-color: #1e40af;
+  --color-button: #93c5fd;
+  --hightlight-button: #bfdbfe;
 }
 
 body {
@@ -333,8 +327,7 @@ button.add {
   cursor: pointer;
 
   display: grid;
-  align-items: center;
-  text-align: center;
+  place-items: center;
   font-size: 20px;
   font-weight: 700;
 
