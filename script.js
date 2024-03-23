@@ -161,7 +161,7 @@ function alertModal() {
     button.classList.add('hidden')
     button.removeEventListener('click', clearAll)
     h1.classList.add('clear')
-    h1.innerHTML = 'LIMPAR TAREFAS'
+    h1.innerHTML = 'APAGAR TAREFAS'
 
   } else {
 
@@ -198,7 +198,6 @@ function clearAll() {
   let container = document.querySelector('#container')
   container.classList.add('hidden')
 
-  newTask()
 }
 
 function changeTheme() {

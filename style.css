@@ -18,6 +18,7 @@
   --background-color: #202020;
   --color-button: #737373;
   --hightlight-button: #737373;
+  --placeholder-color: #e6e6e69c;
 }
 
 .light {
@@ -27,6 +28,7 @@
   --background-color: #1e40af;
   --color-button: #93c5fd;
   --hightlight-button: #bfdbfe;
+  --placeholder-color: #98c7ff;
 }
 
 body {
@@ -206,6 +208,10 @@ h1 input{
 
 h1 input:focus {
   background-color: var(--hightlight-button);
+}
+
+h1 input::placeholder {
+  color: var(--placeholder-color);
 }
 
 .buttons {
@@ -402,6 +408,10 @@ button.add:hover {
 
 #taskArea input:focus {
   background-color: var(--hightlight-button);
+}
+
+#taskArea input::placeholder {
+  color: var(--placeholder-color);
 }
 
 #deleteTaskButton {
