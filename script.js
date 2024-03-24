@@ -6,6 +6,7 @@ var TaskList = []
 var Title = localStorage.getItem('Title')
 var TaskListString = localStorage.getItem('TaskList')
 var TaskListArray = JSON.parse(TaskListString)
+var Theme = localStorage.getItem('Theme', Theme)
 
 const taskTemplate = 
 `
@@ -21,6 +22,10 @@ const taskTemplate =
 `
 
 // Resconstrói a página com base no LocalSave do usuário
+
+if (Theme == 'dark') {
+  changeTheme()
+}
 
 titleArea.value = Title
 
@@ -86,6 +91,11 @@ function save() {
   });
 
   alertSave.classList.add('hidden')
+
+  const html = document.documentElement
+  const theme = html.classList[0]
+  
+  localStorage.setItem('Theme', theme)
 }
 
 function newTask() {
