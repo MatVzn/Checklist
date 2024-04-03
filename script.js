@@ -91,11 +91,6 @@ function save() {
   });
 
   alertSave.classList.add('hidden')
-
-  const html = document.documentElement
-  const theme = html.classList[0]
-  
-  localStorage.setItem('Theme', theme)
 }
 
 function newTask() {
@@ -223,4 +218,8 @@ function changeTheme() {
       html.classList.add('light')
       break
   }
+
+  const theme = html.classList[0]
+  
+  localStorage.setItem('Theme', theme)
 }

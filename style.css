@@ -464,10 +464,14 @@ button.add:hover {
 
   header {
     padding-right: 55px;
+    flex-direction: column;
+    padding: 0;
   }
 
   .buttons {
-    gap: 8px;
+    position: absolute;
+    top: -40px;
+    left: 2px;
   }
 
   section.checkList {
