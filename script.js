@@ -95,6 +95,8 @@ function save() {
 
 function newTask() {
 
+  const html = document.documentElement
+
   if (taskArea.childElementCount >= 29) {
     const button = taskArea.nextElementSibling
     button.classList.add('hidden')
@@ -104,6 +106,7 @@ function newTask() {
     div.setAttribute('class', 'taskBox')
     div.innerHTML = taskTemplate
     taskArea.appendChild(div)
+    
     const inputArea = div.querySelector('input')
     inputArea.focus()
 
@@ -111,13 +114,20 @@ function newTask() {
       const button = taskArea.nextElementSibling
       button.classList.add('hidden')
     }
+
+    if (html.className == 'dark') {
+      changeTheme()
+      changeTheme()
+    }
   }
+
 }
 
 function check(event) {
 
   const checkBox = event.target.querySelector('img') 
   const input = event.target.nextElementSibling
+  const html = document.documentElement
 
     if (checkBox.src.includes('square.svg')) {
       if (input.value.length == 0) {
@@ -127,8 +137,13 @@ function check(event) {
         input.classList.add('check')
       }
     } else {
-      checkBox.src = './assets/square.svg'
-      input.classList.remove('check')
+      if (html.className == 'dark') {
+        checkBox.src = './assets/whitesquare.svg'
+        input.classList.remove('check')
+      } else {
+        checkBox.src = './assets/square.svg'
+        input.classList.remove('check')
+      }
     }
 }
 
@@ -220,13 +235,14 @@ function changeTheme() {
         divLineArray.style.borderBottomColor = '#e6e6e69c'
       )
 
-      i = checkBox.length
+      var i = checkBox.length
       while (i > 0) {
         i--
-
-        if (!checkBox[i].src.includes('check') && i%2 == 0) {
+        
+        if (checkBox[i].src.includes('square.svg')) {
           checkBox[i].src = './assets/whitesquare.svg'
-        } else {
+        } 
+        if (checkBox[i].src.includes('x.svg')){
           checkBox[i].src = './assets/whitex.svg'
         }
       }
@@ -240,13 +256,14 @@ function changeTheme() {
         divLineArray.style.borderBottomColor = 'black'
       )
 
-      i = checkBox.length
+      var i = checkBox.length
       while (i > 0) {
         i--
 
-        if (!checkBox[i].src.includes('check') && i%2 == 0) {
+        if (checkBox[i].src.includes('square.svg')) {
           checkBox[i].src = './assets/square.svg'
-        } else {
+        }  
+        if (checkBox[i].src.includes('x.svg')) {
           checkBox[i].src = './assets/x.svg'
         }
           
