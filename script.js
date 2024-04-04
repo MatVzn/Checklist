@@ -23,10 +23,6 @@ const taskTemplate =
 
 // Resconstrói a página com base no LocalSave do usuário
 
-if (Theme == 'dark') {
-  changeTheme()
-}
-
 titleArea.value = Title
 
 if (TaskListArray && TaskListArray.length > 0) {
@@ -55,6 +51,10 @@ if (taskArea.childElementCount >= 29) {
 
 if (taskArea.childElementCount > 1) {
   taskArea.firstElementChild.remove()
+}
+
+if (Theme == 'dark') {
+  changeTheme()
 }
 
 function save() {
@@ -207,15 +207,41 @@ function clearAll() {
 
 function changeTheme() {
   const html = document.documentElement
+  const checkBox = taskArea.querySelectorAll('img')
 
   switch (html.className) {
     case 'light':
       html.classList.remove('light')
       html.classList.add('dark')
+
+      i = checkBox.length
+      while (i > 0) {
+        i--
+
+        if (!checkBox[i].src.includes('check') && i%2 == 0) {
+          checkBox[i].src = './assets/whitesquare.svg'
+        } else {
+          checkBox[i].src = './assets/whitex.svg'
+        }
+      }
+
       break
     case 'dark':
       html.classList.remove('dark')
       html.classList.add('light')
+
+      i = checkBox.length
+      while (i > 0) {
+        i--
+ 
+        if (!checkBox[i].src.includes('check') && i%2 == 0) {
+          checkBox[i].src = './assets/square.svg'
+        } else {
+          checkBox[i].src = './assets/x.svg'
+        }
+          
+      }
+
       break
   }
 
