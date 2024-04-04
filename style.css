@@ -198,7 +198,7 @@ h1 input{
 
   font-size: 38px;
   font-weight: 600;
-  width: 80%;
+  width: 90%;
 
   border-radius: 5px;
   padding: 5px;
@@ -462,9 +462,13 @@ button.add:hover {
 /* Mobile and Tablets */
 @media (max-width: 550px) {
 
+  h1 input {
+    font-size: 32px;
+    font-weight: 600;
+  }
+
   header {
     padding-right: 55px;
-    flex-direction: column;
     padding: 0;
   }
 
@@ -477,5 +481,29 @@ button.add:hover {
   section.checkList {
     width: 90vw;
     min-width: 250px;
+  }
+
+  #alertModal h1 {
+    font-size: 26px;
+  }
+
+  #alertModal p {
+    font-size: 18px;
+    margin: 30px 20px;
+  }
+
+  #alertModal .alertButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0 25px;
+  }
+
+  #functionButton {
+    padding: 2px;
+  }
+
+  #alertModal {
+    width: 250px;
   }
 }
