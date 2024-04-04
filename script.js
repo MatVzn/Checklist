@@ -208,11 +208,17 @@ function clearAll() {
 function changeTheme() {
   const html = document.documentElement
   const checkBox = taskArea.querySelectorAll('img')
+  const divLine = taskArea.children
+  const divLineArray = Array.prototype.slice.call(divLine)
 
   switch (html.className) {
     case 'light':
       html.classList.remove('light')
       html.classList.add('dark')
+
+      divLineArray.map((divLineArray) => 
+        divLineArray.style.borderBottomColor = '#e6e6e69c'
+      )
 
       i = checkBox.length
       while (i > 0) {
@@ -230,10 +236,14 @@ function changeTheme() {
       html.classList.remove('dark')
       html.classList.add('light')
 
+      divLineArray.map((divLineArray) => 
+        divLineArray.style.borderBottomColor = 'black'
+      )
+
       i = checkBox.length
       while (i > 0) {
         i--
- 
+
         if (!checkBox[i].src.includes('check') && i%2 == 0) {
           checkBox[i].src = './assets/square.svg'
         } else {
