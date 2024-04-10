@@ -414,7 +414,7 @@ button.add:hover {
   color: var(--placeholder-color);
 }
 
-#deleteTaskButton {
+.deleteTaskButton {
   all: unset;
 
   background-color: none;
@@ -432,12 +432,12 @@ button.add:hover {
   transition: all .2s;
 }
 
-#deleteTaskButton img {
+.deleteTaskButton img {
   pointer-events: none;
   height: 15px;
 }
 
-#deleteTaskButton:hover {
+.deleteTaskButton:hover {
   background-color: var(--highlight-red);
 }
 

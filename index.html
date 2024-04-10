@@ -57,15 +57,17 @@
         <form onsubmit="return false">
           <ul>
             <div id="taskArea">
+
               <div class="taskBox">
                 <button type="button" id="checkBox" onclick="check(event)">
                   <img src="./assets/square.svg">
                 </button>
-                <input spellcheck="false" maxlength="50" autocomplete="off" id="taskInput" placeholder="Tarefa vazia">       
-                <button type="button" id="deleteTaskButton" onclick="deleteTask(event)">
+                <input name="task" spellcheck="false" maxlength="50" autocomplete="off" class="taskInput" placeholder="Tarefa vazia">       
+                <button type="button" class="deleteTaskButton" onclick="deleteTask(event)">
                   <img src="./assets/x.svg">
                 </button>
               </div>
+
             </div>
 
             <button class="add" onclick="newTask()"> + </button>
