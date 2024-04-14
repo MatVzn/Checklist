@@ -22,6 +22,7 @@
 }
 
 .light {
+  --text-color: #272829;
   --primary-color: #272829;
   --highlight-primary: rgba(40, 41, 42, 0.5);
   --paper-color: #eff6ff;
@@ -196,6 +197,8 @@ header {
 h1 input{
   all: unset;
 
+  color: var(--text-color);
+
   font-size: 38px;
   font-weight: 600;
   width: 90%;
@@ -297,7 +300,7 @@ div.center {
   height: 100%;
   width: 100%;
 
-  padding: 100px 0 50px 0;
+  padding: 70px 0 50px 0;
 
   overflow-y: auto;
   overflow-x: hidden;
@@ -439,6 +442,36 @@ button.add:hover {
 
 .deleteTaskButton:hover {
   background-color: var(--highlight-red);
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+  color: white;
+}
+
+footer a {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+}
+
+footer a:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 1%;
+  height: 2px;
+  background-color: white;
+  opacity: 0;
+  transition: opacity .5s, width .5s;
+}
+
+footer a:hover:after {
+  opacity: 1;
+  width: 100%;  
 }
 
 /* Animation */
